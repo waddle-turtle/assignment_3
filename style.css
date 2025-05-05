@@ -1,0 +1,326 @@
+/* 整體網頁設定 */
+body {
+    overflow: hidden; /* 防止捲軸出現 */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #eaedf0; /* 淺灰背景 */
+}
+
+/* 頂部導覽列 */
+.top-bar {
+    background-color: #ffffff;
+    color: #00000014;
+    padding: 13px 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05); /* 輕微陰影 */
+}
+
+/* 左側導覽列容器 */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 導覽列 logo 圖片 */
+.nav-logo {
+    width: 30px;
+    height: auto;
+}
+
+/* 導覽列文字連結樣式 */
+.nav-left a {
+    text-decoration: none;
+    color: #7e7d7d; /* 灰色字 */
+    font-weight: initial;
+    font-size: 17px;
+    margin-right: 10px;
+}
+
+/* 導覽列中橘色文字樣式 */
+.nav-left b {
+    text-decoration: none;
+    color: #fda017; /* 橘色 */
+    font-weight: normal;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+/* 滑鼠移到文字連結時變深色 */
+.nav-left a:hover {
+    color: #000000;
+    font-weight: normal;
+}
+
+/* dropdown（下拉選單）基本設定 */
+.dropdown {
+    position: relative;
+}
+
+/* 下拉選單內容區 */
+.dropdown-content {
+    display: none; /* 預設隱藏 */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* 陰影 */
+    border-radius: 4px;
+    padding: 10px 0;
+    z-index: 100;
+    white-space: nowrap;
+    min-width: 150px;
+}
+
+/* 下拉選單內每個選項樣式 */
+.dropdown-content a {
+    display: block;
+    padding: 8px 16px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* 滑鼠移上下拉選單時背景變色 */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* 顯示 dropdown（當加上 show class 時） */
+.dropdown.show .dropdown-content {
+    display: block;
+}
+
+/* 中央內容區容器 */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 688px;
+    height: 600px;
+    overflow: hidden;
+}
+
+/* 登入框主要樣式 */
+.login-box {
+    background-color: white;
+    padding: 80px 50px;
+    border-radius: 1px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 340px;
+    text-align: center;
+}
+
+/* Logo 區塊（包含圖與文字） */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Logo 圖片樣式 */
+.logo-icon {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Logo 文字樣式 */
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #c5c5c5;
+}
+
+/* 輸入框（帳號與密碼）通用樣式 */
+input[type="text"],
+input[type="password"] {
+    width: 90%;
+    padding: 15px;
+    margin-bottom: 18px;
+    border: 1px solid #cbd5e0;
+    border-radius: 5px;
+    height: auto;
+}
+
+/* 聚焦時加上橘色框與陰影 */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border: 1px solid orange;
+    box-shadow: 0 0 8px rgba(255, 165, 0, 0.3);
+}
+
+/* 密碼輸入框容器（為了眼睛 icon 定位） */
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+/* 密碼欄位設定 padding 讓眼睛有空間 */
+.password-container input {
+    width: 100%;
+    padding: 15px;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+/* 密碼右邊的眼睛 icon */
+#togglePassword {
+    position: absolute;
+    top: 40%; /* 可微調為 50% */
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #9a9fab;
+}
+
+/* 或文字區分線 */
+.or {
+    margin: 20px 0;
+    font-size: 14px;
+    color: #c5c5c5;
+}
+
+/* captcha 整個區塊（背景灰） */
+.captcha-wrapper {
+    border: 1px solid #d1d5db;
+    padding: 18px;
+    border-radius: 1px;
+    margin-bottom: 15px;
+    background-color: #f8f8f9;
+}
+
+/* Cloudflare 圖示 */
+.captcha img {
+    width: 85px;
+    height: auto;
+}
+
+/* captcha 主要內容區 */
+.captcha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* captcha 左邊的 checkbox 與文字 */
+.captcha-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 勾選框大小 */
+.captcha-box input[type="checkbox"] {
+    width: 23px;
+    height: 23px;
+}
+
+/* 登入按鈕 disabled 狀態 */
+.sign-btn.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* 登入按鈕啟用狀態 */
+.sign-btn:not(.disabled) {
+    background: linear-gradient(235deg, #506976, #394952);
+}
+
+/* 登入按鈕通用樣式 */
+.sign-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(235deg, #c6cccf, #c2c9ce);
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 15px;
+    color: white;
+}
+
+/* 忘記密碼 / 註冊 連結區 */
+.links-split {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+/* 分隔連結樣式 */
+.links-split a {
+    color: #bdbdbd;
+    padding: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 0 7.5px;
+}
+
+/* 社群登入 icon 區 */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    color: #9a9fab;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* 滑過時 icon 顏色變化 */
+.social-icons .google:hover {
+    color: #ea4335;
+}
+
+.social-icons .github:hover {
+    color: #000000;
+}
+
+.social-icons .facebook:hover {
+    color: #1877f2;
+}
+
+.social-icons .other:hover {
+    color: #3d3d3d;
+}
+
+/* 頁面底部的固定欄位 */
+.footer-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    color: #6b7280;
+    padding: 25px 20px;
+    font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid #e5e7eb;
+    z-index: 1000;
+}
+
+/* 底部連結樣式 */
+.footer-bar a {
+    color: #6b7280;
+    text-decoration: none;
+}
+
+.footer-bar a:hover {
+    text-decoration: underline;
+}
+
+/* 底部分隔線 */
+.footer-bar .divider {
+    color: #d1d5db;
+}
